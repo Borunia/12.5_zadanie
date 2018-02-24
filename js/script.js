@@ -19,18 +19,18 @@ function createTweet(input) {
         quoteAuthor = "Unknown author";
     }
 
-    
-}
-var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
+    var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
+       
 
-if (tweetText.length > 140) {
-    getQuote();
-} else {
-    var tweet = tweetLink + encodeURIComponent(tweetText);
-    $('.quote').text(quoteText);
-    $('.author').text("Author: " + quoteAuthor);
-    $('.tweet').attr('href', tweet);
-}
+    if (tweetText.length > 140) {
+        getQuote();
+    } else {
+        var tweet = tweetLink + encodeURIComponent(tweetText);
+        $('.quote').text(quoteText);
+        $('.author').text("Author: " + quoteAuthor);
+        $('.tweet').attr('href', tweet);
+    }
+}    
 
 $(document).ready(function() {
     getQuote();
@@ -38,3 +38,4 @@ $(document).ready(function() {
         getQuote();
     })
 });
+
